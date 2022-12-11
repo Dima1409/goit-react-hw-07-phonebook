@@ -87,7 +87,7 @@ height: 30px;
     animation-iteration-count: infinite;
 }
 `
-const DeleteButton = styled.button`
+const DeleteButton = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
