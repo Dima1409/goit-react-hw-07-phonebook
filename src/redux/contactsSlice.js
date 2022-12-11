@@ -27,6 +27,14 @@ const contactsSlice = createSlice({
     builder.addCase(addContact.rejected, handleRejected);
     builder.addCase(deleteContact.rejected, handleRejected);
 
+    // builder.addCase(editContact.pending, handlePending);
+    // builder.addCase(editContact.rejected, handleRejected);
+    // builder.addCase(editContact.fulfilled, (state, action) => {
+    //   state.isLoading = false;
+    //   state.error = null;
+    //   state.items.push(action.payload);
+    // });
+
     builder.addCase(fetchContacts.fulfilled, (state, action) => {
       state.isLoading = false;
       state.error = null;

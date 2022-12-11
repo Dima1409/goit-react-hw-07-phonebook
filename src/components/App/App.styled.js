@@ -10,7 +10,7 @@ body {
 const Container = styled.div`
 width: 310px;
 margin: 0 auto;
-padding: 20px 20px;
+padding: 20px 4px;
 position: relative;
 @media screen and (min-width: 768px) {
 width: 768px;

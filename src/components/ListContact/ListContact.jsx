@@ -1,4 +1,5 @@
 import React from 'react';
+// import { useState } from 'react';
 import {
   List,
   ListItem,
@@ -15,6 +16,10 @@ import { AiTwotoneDelete, AiOutlinePhone, AiOutlineMail } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 
 const ListContact = () => {
+  // const [ShowModal, setShowModal] = useState(false);
+  // const toggleModal = () => {
+  //   setShowModal(!ShowModal);
+  // };
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectByFilter);
   const loading = useSelector(selectLoading);
@@ -33,7 +38,6 @@ const ListContact = () => {
   const sortedContacts = getSortContacts().sort((a, b) =>
     a.name.localeCompare(b.name)
   );
-  console.log(sortedContacts);
 
   return (
     <List>
@@ -63,6 +67,12 @@ const ListContact = () => {
                   >
                     <AiTwotoneDelete />
                   </DeleteButton>
+                  {/* <DeleteButton
+                  onClick={toggleModal}
+                  >
+                    Edit
+                  </DeleteButton> */}
+                 {/* {ShowModal && <ModalC onClick={()=>toggleModal(id)}/>}  */}
                 </IconContext.Provider>
               </ListItem>
             );

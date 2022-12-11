@@ -49,7 +49,7 @@ const App = () => {
                 Your list is empty... Please add a new contact
               </ListIsEmpty>
             )}
-             {loading && <Loader/>}
+             {loading && !isErr && <Loader/>}
              {isErr && <div style={{color:'red'}}>loading error!</div>}
             <ListContact></ListContact>
           </ContainerList>

@@ -2,6 +2,7 @@ import styled, {keyframes} from 'styled-components';
 
 const List = styled.ol`
 text-align: start;
+margin-bottom: 40px;
 `;
 
 const ListItem = styled.li`
@@ -87,30 +88,27 @@ height: 30px;
     animation-iteration-count: infinite;
 }
 `
-const DeleteButton = styled.div`
+const DeleteButton = styled.button`
 display: flex;
 justify-content: center;
 align-items: center;
 margin-left: 5px;
-width: 20px;
-height: 20px;
 background-color: transparent;
 border: none;
 color: ${({theme}) => theme.colors.font};
 cursor: pointer;
-transition: all 250ms;
-@media screen and (min-width: 768px) {
-width: 30px;
-height: 30px;  
-}
-&:hover:not(:disabled), 
-&:focus, 
-&:active {
+&:hover:not(:disabled) > svg, 
+&:focus > svg, 
+&:active > svg{
     color: #9c1111;
     animation-name: ${animDelete};
     animation-duration: 1s;
     animation-iteration-count: infinite;
 }
+& > svg {
+    transition: all 250ms;  
+}
+
 `
 const ItemInfo = styled.p`
 display: flex;

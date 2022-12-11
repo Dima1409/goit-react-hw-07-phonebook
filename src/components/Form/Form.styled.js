@@ -15,7 +15,7 @@ margin-bottom: 5px;
 
 const LabelInput = styled.input`
 max-width: 80%;
-padding: 10px;
+padding: 8px;
 color: teal;
 @media screen and (min-width: 768px) {
 max-width: 60%;
@@ -28,12 +28,17 @@ max-width: 50%;
 
 const ButtonSubmit = styled.button`
 margin: 10px 0;
+padding: 8px;
 color: #13132e;
 background-color: #ccca41;
-max-width: 150px;
-font-size: 24px;
+max-width: 90px;
+font-size: 14px;
 border: none;
 transition: all 0.3s;
+@media screen and (min-width: 768px) {
+max-width: 150px;
+font-size: 22px;
+}
 &:hover:not(:disabled) {
     cursor: pointer;
     box-shadow: 0 0 6px ${({theme}) => theme.colors.font};
