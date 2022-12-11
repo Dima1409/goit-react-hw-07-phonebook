@@ -8,9 +8,9 @@ body {
 }
 `
 const Container = styled.div`
-width: 300px;
+width: 310px;
 margin: 0 auto;
-padding: 20px 10px;
+padding: 20px 4px;
 position: relative;
 @media screen and (min-width: 768px) {
 width: 768px;
@@ -23,7 +23,6 @@ const ContainerList = styled.div`
 text-align: center;
 margin: 0 auto;
 background-color: ${({theme}) => theme.colors.body};
-padding: 0 10px;
 `;
 const Heading = styled.div`
 display: flex;
