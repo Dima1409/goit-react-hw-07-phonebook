@@ -92,13 +92,17 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-left: 5px;
-width: 30px;
-height: 30px;
+width: 20px;
+height: 20px;
 background-color: transparent;
 border: none;
 color: ${({theme}) => theme.colors.font};
 cursor: pointer;
 transition: all 250ms;
+@media screen and (min-width: 768px) {
+width: 30px;
+height: 30px;  
+}
 &:hover:not(:disabled), 
 &:focus, 
 &:active {

@@ -5,8 +5,8 @@ position: relative;
 `
 const Icon = styled.div`
   position: fixed;
-  bottom: 40px;
-  right: 20px;
+  bottom: 10px;
+  right: 10px;
   border: 1px solid ${({theme}) => theme.colors.font};
   background-color: ${({theme}) => theme.colors.body};
   opacity: 0.5;
