@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Form = styled.form`
-background-color: ${({theme}) => theme.colors.main};
+background-color: ${(props)=>props.theme.main};
 display: flex;
 flex-direction: column;
 padding: 0 10px;
@@ -16,7 +16,7 @@ margin-bottom: 5px;
 const LabelInput = styled.input`
 max-width: 80%;
 padding: 8px;
-color: teal;
+color: ${(props)=>props.theme.text};
 @media screen and (min-width: 768px) {
 max-width: 60%;
 }
@@ -41,7 +41,7 @@ font-size: 22px;
 }
 &:hover:not(:disabled) {
     cursor: pointer;
-    box-shadow: 0 0 6px ${({theme}) => theme.colors.font};
+    box-shadow: red;;
 }
 &:disabled {
     background-color: grey;

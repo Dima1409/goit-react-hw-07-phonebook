@@ -6,7 +6,7 @@ const Spinner = styled.div`
    left: 50%;
    transform: translate(-50%, -50%);
    & > svg {
-      fill: ${({theme}) => theme.colors.font};
+      fill: ${(props)=>props.theme.text};
    }
 `
 

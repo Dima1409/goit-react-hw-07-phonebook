@@ -6,15 +6,18 @@ const ModeButton = styled.button`
   right: 10px; */
   padding: 15px;
   border-radius: 50%;
-  background: ${({theme}) => theme.colors.main};
-  color: ${({theme}) => theme.colors.font};
+  background: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.body};
+  background: red;
+  color: yellow;
   border: none;
   width: 30px;
   height: 30px;
   cursor: pointer;
   transition: 0.3s all;
   &:hover {
-  box-shadow: 0 0 6px  ${({theme}) => theme.colors.font};
+    ${(props) => props.theme.text};
+  box-shadow: red;
   }
 `
 const Wrapper = styled.div`

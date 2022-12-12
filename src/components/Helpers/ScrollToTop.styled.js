@@ -7,17 +7,15 @@ const Icon = styled.div`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  border: 1px solid ${({theme}) => theme.colors.font};
-  background-color: ${({theme}) => theme.colors.body};
+  border: 1px solid ${(props)=>props.theme.text};
   opacity: 0.5;
   border-radius: 50%;
   z-index: 20;
   width: 25px;
   height: 25px;
-  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); 
+  transition: 0.3s; 
   &:hover {
   cursor: pointer;
-  color:${({theme}) => theme.colors.font};
   transform: scale(1.1);
   opacity: 1;
   }

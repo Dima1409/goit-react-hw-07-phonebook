@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'styled-components';
+import styled , { ThemeProvider }from 'styled-components';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
@@ -17,10 +17,30 @@ import {
   Global,
   Heading,
 } from './App.styled';
-import { selectTheme, selectLoading, selectError } from 'redux/selectors';
+import { selectLoading, selectError } from 'redux/selectors';
+import { useState } from 'react';
+
+const StyledApp = styled.div`
+min-height: 100vh;
+background-color: ${(props)=>props.theme.body};
+`
+const lightTheme = {
+  body: '#bcc2f0',
+  text: '#1c1c1e',
+  main: '#0385ff'
+}
+const darkTheme = {
+  body: '#1c1c1e',
+  text: '#bcc2f0',
+  main: '#030309'
+}
 
 const App = () => {
-  const theme = useSelector(selectTheme);
+  const [theme, setTheme] = useState('light');
+  const isDarkTheme = theme === 'dark';
+  const toggleTheme = () => {
+    setTheme(isDarkTheme ? 'light' : 'dark')
+  }
   const loading = useSelector(selectLoading);
   const isErr = useSelector(selectError);
   const dispatch = useDispatch();
@@ -30,14 +50,14 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <StyledApp>
       <Container>
-        <ThemeProvider theme={theme}>
           <Global />
           <ScrollToTop/>
           <Heading>
             <FormTitle>Phonebook</FormTitle>
-            <ThemeBtn />
+            <ThemeBtn toggleTheme={toggleTheme}/>
           </Heading>
           <ContactsForm/>
           <ContainerList>
@@ -53,9 +73,10 @@ const App = () => {
              {isErr && <div style={{color:'red'}}>loading error!</div>}
             <ListContact></ListContact>
           </ContainerList>
-        </ThemeProvider>
       </Container>
-    </>
+    </StyledApp>
+    </ThemeProvider>
+    
   );
 };
 

@@ -36,9 +36,9 @@ const animCall = keyframes`
 100% {transform: rotate(0deg)};
 `
 const animDelete = keyframes`
-0% {transform: scale(1.1)};
-50% {transform: scale(1)};
-100% {transform: scale(1.1)};
+0% {transform: scale(1)};
+50% {transform: scale(1.1)};
+100% {transform: scale(1)};
 `
 const CallTo = styled.a`
 display: flex;
@@ -49,13 +49,13 @@ width: 20px;
 height: 20px;
 border: none;
 cursor: pointer;
-color: ${({theme}) => theme.colors.font};
+color: ${(props)=>props.theme.text};
 @media screen and (min-width: 768px) {
 width: 30px;
 height: 30px;  
 }
 & > svg {
-     transition: all 250ms;
+    transition: all 0.3s;
 }
 &:hover > svg {
     fill: green;
@@ -73,13 +73,13 @@ width: 20px;
 height: 20px;
 border: none;
 cursor: pointer;
-color: ${({theme}) => theme.colors.font};
+color: ${(props)=>props.theme.text};
 @media screen and (min-width: 768px) {
 width: 30px;
 height: 30px;  
 }
 & > svg {
-    transition: all 250ms;  
+    transition: all 0.3s;
 }
 &:hover > svg {
     fill: orange;
@@ -95,8 +95,11 @@ align-items: center;
 margin-left: 5px;
 background-color: transparent;
 border: none;
-color: ${({theme}) => theme.colors.font};
+color:${(props)=>props.theme.text};
 cursor: pointer;
+& > svg {
+    transition: all 0.3s;
+}
 &:hover:not(:disabled) > svg, 
 &:focus > svg, 
 &:active > svg{
@@ -105,10 +108,6 @@ cursor: pointer;
     animation-duration: 1s;
     animation-iteration-count: infinite;
 }
-& > svg {
-    transition: all 250ms;  
-}
-
 `
 const ItemInfo = styled.p`
 display: flex;
