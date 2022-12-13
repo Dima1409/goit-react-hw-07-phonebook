@@ -1,61 +1,30 @@
 import React from 'react';
-import { useState } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-//  import { selectTheme } from 'redux/selectors';
-// import { setDarkTheme, setDefaultTheme } from 'redux/themeSlice';
-import { ModeButton, Wrapper } from './ThemeBtn.styled';
-import { HiOutlineLightBulb, HiOutlineMoon } from 'react-icons/hi';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectTheme } from 'redux/selectors';
+import { setTheme } from 'redux/themeSlice';
+import { Toggle, ThemeSwitch } from './ThemeBtn.styled';
+import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
 import { IconContext } from 'react-icons';
 
-const ThemeBtn = ({toggleTheme}) => {
-    const [toggle, setToggle] = useState(false);
-
-    const onToggle = () => {
-        setToggle(!toggle);
-        toggleTheme();
-    }
-//   const dispatch = useDispatch();
-//    const theme = useSelector(selectTheme);
-//   const setDefault = () => {
-//     dispatch(setDefaultTheme());
-//   };
-//   const setDark = () => {
-//     dispatch(setDarkTheme());
-//   };
+const ThemeBtn = () => {
+  const thm = useSelector(selectTheme);
+  const dispatch = useDispatch();
+  const choseTheme = () => {
+    dispatch(setTheme());
+  };
 
   return (
     <>
-    <ModeButton onClick={onToggle}>
-          <Wrapper>
-            <IconContext.Provider value={{ size: '25px' }}>
-              <HiOutlineLightBulb />
-            </IconContext.Provider>
-          </Wrapper>
-        </ModeButton>
-        <ModeButton onClick={onToggle}>
-          <Wrapper>
-            <IconContext.Provider value={{ size: '25px' }}>
-              <HiOutlineMoon />
-            </IconContext.Provider>
-          </Wrapper>
-        </ModeButton>
-      {/* {!theme.darkTheme ? (
-        <ModeButton onClick={setDark}>
-          <Wrapper>
-            <IconContext.Provider value={{ size: '25px' }}>
-              <HiOutlineLightBulb />
-            </IconContext.Provider>
-          </Wrapper>
-        </ModeButton>
-      ) : (
-        <ModeButton onClick={setDefault}>
-          <Wrapper>
-            <IconContext.Provider value={{ size: '25px' }}>
-              <HiOutlineMoon />
-            </IconContext.Provider>
-          </Wrapper>
-        </ModeButton>
-      )} */}
+      <ThemeSwitch>
+        <IconContext.Provider value={{ size: '25px' }}>
+          <HiOutlineSun />
+          <Toggle>
+            <input type="checkbox" checked={thm} onChange={choseTheme} />
+            <span />
+          </Toggle>
+          <HiOutlineMoon />
+        </IconContext.Provider>
+      </ThemeSwitch>
     </>
   );
 };

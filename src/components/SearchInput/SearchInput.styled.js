@@ -13,8 +13,10 @@ margin-bottom: 5px;
 const InputSearch = styled.input`
 border: none;
 outline: none;
+border-radius: 4px;
 color: ${(props)=>props.theme.text};
-padding: 10px;
+background-color: ${(props)=>props.theme.input};
+padding: 6px;
 min-width: 200px;
 `
 

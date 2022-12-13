@@ -19,6 +19,11 @@ width: 768px;
 width: 1280px;
 }
 `
+const StyledApp = styled.div`
+  min-height: 100vh;
+  background-color: ${props => props.theme.body};
+`;
+
 const ContainerList = styled.div`
 text-align: center;
 margin: 0 auto;
@@ -43,4 +48,4 @@ font-size: 18px;
 color: ${(props)=>props.theme.text};
 `
 
-export {Container, ContainerList, ListTitle, FormTitle, ListIsEmpty, Global, Heading};
+export {Container, ContainerList, ListTitle, FormTitle, ListIsEmpty, Global, Heading, StyledApp};
